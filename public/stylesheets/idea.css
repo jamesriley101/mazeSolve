@@ -1,0 +1,26 @@
+img {
+    width: 90%;
+}
+
+.centered {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.lead {
+    margin: 10px auto 40px auto;
+}
+
+#pageTitle {
+    color: #428bca;
+    font-size: 28px;
+    padding-top: 30px;
+}
+
+patentLink {
+    margin: 20px auto;
+}
+
+row {
+    height: 100%;
+}

@@ -1,0 +1,63 @@
+
+.link {
+    color: orange;
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+.arrow {
+    color: orange;
+    margin: 10px 10px 10px 10px;
+    top: 2;
+}
+
+
+.aboutImage {
+    height: 500px;
+    margin: 15px auto;
+    border-radius: 5%;
+}
+
+
+.specialties {
+    color: #428bca;
+    font-size: 20px;
+}
+
+
+.bolden {
+    font-weight: 700;
+    font-size: 28px;
+}
+
+
+#photoCol {
+    text-align: center;
+}
+
+#flipImage {
+    height: 92%;
+}
+
+#textCol {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#name {
+    font-size: 40px;
+    font-weight: 700;
+    color: orange;
+}
+
+#aboutText {
+    color: #428bca;
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#resume {
+    font-weight: 700;
+}
+

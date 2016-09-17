@@ -1,0 +1,72 @@
+<% include ./partials/header %>
+<!--<div class="container">-->
+    <div class="row" id="header_row">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8">
+            <div class="page-header">
+                <h1 class="display-3 blue">sortSelect</h1>
+                <p class="lead orange">Test sorting alogithms on data sets</p>
+            </div>
+        </div>
+        <div class="col-xs-2"></div>
+    </div>
+    
+    <div class="row dataForms">
+        <div class="col-xs-6" id="genData">
+            <h4 class="blue formTitle">Generate some data to sort</h3>
+            <form>
+                <div class="dropdown genDataButton">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Data type
+                    <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </div>
+                <div class="dropdown genDataButton">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Set size
+                    <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </div>
+                <div class="dropdown genDataButton">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Pre-condition
+                    <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </div>
+            </form>
+        </div>
+        <div class="hr vr"></div>
+        <div class="col-xs-6" id="uploadData">
+            <h4 class="blue formTitle">Upload some data to sort</h3>
+            <form>
+                <input type="text" class="input-group-lg" id="dataUploadInput" placeholder=".csv file">
+                <button class="btn btn-sm" id="browseButton">Browse</button>
+                <button class="btn btn-sm" id="uploadButton">Upload</button>
+            </form>
+        </div>
+    </div>
+<!--</div>-->
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/sort.css">  
+<% include ./partials/footer %>

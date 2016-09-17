@@ -1,0 +1,39 @@
+form p {
+    text-align: center;
+}
+
+.hr.vr {
+    border: 0;
+    background: linear-gradient(to top, rgba(150, 150, 180, 0.75), #428bca, rgba(150, 150, 180, 0.75));
+    position: absolute;
+    left: 50%;
+    z-index: 10;
+    width: 3px;
+    height: 300px;
+    /*box-shadow: 0 0 1em #428bca;*/
+    border-radius: 20%;
+}
+
+.formTitle {
+    text-align: center;
+    font-size: 19px;
+    margin-bottom: 50px;
+}
+
+.dataForms {
+    margin-top: 30px;
+}
+
+.genDataButton {
+    margin-left: 40%;
+    margin-bottom: 10px;
+}
+
+#dataUploadInput {
+    margin-left: 16%;
+    height: 30px;
+}
+
+#genData {
+    margin-right: -4%;
+}

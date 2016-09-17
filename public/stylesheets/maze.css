@@ -1,0 +1,94 @@
+table {
+    margin: 10px auto;
+    border-spacing: 2px;
+}
+
+td {
+    text-align: center;
+}
+
+.lead {
+    margin-bottom: 10px;
+}
+.userMovesBlock {
+    color: orange;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.square {
+    border: 2px solid #428bca;
+    height: 25px;
+    width: 25px;
+    color: #428bca;
+    background-size: 80% 80%;
+    padding-top: 1px;
+    box-shadow: 0 0 2em white;
+    border-radius: 15%;
+}
+
+.btn {
+    margin: 8px 8px 8px 8px;
+}
+
+.lowerButton {
+    width: 30%;
+}
+
+.endSquare {
+    background: orange;
+}
+
+.availableUserMove {
+    background: rgba(0, 180, 0, 0.6);
+}
+
+.userVisited {
+    background: rgba(0, 180, 0, 0.3);
+}
+
+.simVisited {
+    background: rgba(255, 200, 75, 0.5);
+}
+
+.simIterator{
+    background: orange;
+}
+
+.empty {
+    background: white;
+}
+
+.solutionPath {
+    background: rgba(0, 255, 0, 0.3);
+}
+
+.startSquare {
+    background: orange;
+}
+
+
+.endSquareComplete {
+    background: rgba(0, 255, 0, 0.8);
+}
+
+#submitRow {
+    text-align: center;
+}
+
+#computerMoves {
+    margin-left: 8px;
+}
+
+#userMoves {
+    margin-left: 8px;
+}
+
+#subtitle{
+    color: rgba(0, 180, 0, 0.6);
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+

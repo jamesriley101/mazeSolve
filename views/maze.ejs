@@ -1,0 +1,42 @@
+<% include ./partials/header %>
+<div class="row" id="header_row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <div class="page-header">
+            <h1 class="display-3 blue">mazeSolve</h1>
+            <p class="lead orange">Can you find a faster way out?</p>
+            <p id="subtitle">Click green squares to move</p>
+            <button class="btn btn-sm" id="newButton" href="/maze" role="button">Random Maze</button>
+        </div>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+
+<div class="row" id="mazeBoard">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-10">
+        <table id="mazeSquares">
+            <% for (var i = 0; i < 18; i++) { %>
+                <tr>
+                    <% for (var j = 0; j < 18; j++) { %>
+                    <td class="square" id="<%=String(i) + '_' + String(j)%>"></td>
+                    <% } %>
+                </tr>
+            <% } %>
+        </table>
+    </div>
+    <div class="col-xs-1"></div>
+</div>
+<div class="row">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4" id="submitRow">
+        <p class="userMovesBlock">Your solution:  <span id="userMoves">0</span></p>
+        <p class="userMovesBlock">My solution:  <span id="computerMoves"></span></p>
+        <button class="btn btn-sm lowerButton" id="solveButton" href="#" role="button">Solve</button>
+    </div>
+    <div class="col-xs-4"></div>
+</div>
+
+<script type= "text/javascript" src="scripts/maze.js"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/maze.css">  
+<% include ./partials/footer %>
