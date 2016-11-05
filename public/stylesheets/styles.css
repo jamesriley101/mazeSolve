@@ -1,3 +1,7 @@
+li a {
+    text-align: right;
+}
+
 .navbar {
     margin-right: -15px;
         
@@ -8,9 +12,12 @@
     padding-left: 30px;
 }
 
-.nav-tabs {
-    border-bottom: none;
-    margin-top: 5px;
+.navbar-default .navbar-nav>li>a{
+    color: #428bca;
+}
+
+.navbar-default .navbar-nav>li>a:foucs {
+    color: #428bca;
 }
 
 .btn {
@@ -34,6 +41,10 @@
     margin-bottom: 25px;
 }
 
+.dropdown-menu {
+    min-width: 100%;
+}
+
 #bottomPadding {
     margin-top: 150px;
 }
@@ -44,13 +55,6 @@
     padding-bottom: 0px;
     border-bottom: none;
 }
-
-/*.pageBorder {*/
-/*    background: #428bca;*/
-/*    height: 100%;*/
-/*    margin-top: -20px;*/
-/*    border-top: 1px rgba(100, 100, 100, 0.2) solid;*/
-/*}*/
 
 .blue {
     color: #428bca;
@@ -66,16 +70,7 @@
 }
 
 #content {
-    margin-top: -20px;
-    padding-top: 20px;
-    padding-right: 5px;
-    padding-left: 5px;
+    width: 100%;
     height: 100%;
-    border-top: 1px rgba(100, 100, 100, 0.2) solid;
 }
 
-#everything {
-    border-right: 120px solid #428bca;
-    border-left: 120px solid #428bca;
-    min-height: 100%;
-}

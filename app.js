@@ -1,7 +1,7 @@
 var express = require("express"),
     app     = express(),
     bodyParser = require("body-parser");
-    
+
 app.use(express.static("public"));
     
 app.set("view engine", "ejs");
@@ -10,35 +10,39 @@ app.use(bodyParser.urlencoded({extended: true}));
 var boardSize = 3;
 
 app.get("/", function(req, res){
-   res.render("home"); 
+   res.render("maze"); 
 });
 
-app.get("/about", function(req, res){
-    res.render("about");
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
 
-app.get("/tic_tac", function(req, res){
-    res.render("tic_tac", {
-        boardSize: boardSize
+// error handlers
+
+// development error handler
+// will print stacktrace
+if (app.get('env') === 'development') {
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      error: err
     });
+  });
+}
+
+// production error handler
+// no stacktraces leaked to user
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: {}
+  });
 });
 
-app.get("/tic_tac", function(req, res){
-    res.render("tic_tac");
-});
 
-app.get("/maze", function(req, res){
-    res.render("maze");
-});
-
-app.get("/sort", function(req, res){
-    res.render("sort");
-});
-
-app.get("/idea", function(req, res){
-    res.render("ideaSource");
-});
-
-app.listen(process.env.PORT, process.env.IP, function(){
-    console.log("Server is running");
-});
+module.exports = app;

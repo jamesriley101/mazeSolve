@@ -44,12 +44,12 @@ Maze.prototype.createMazeSquares = function(){
                 newSquare.leftWall = this.squares[this.squares.length - 1].rightWall;
             }
             if (i == 17){
-                newSquare.bottomWall = true;;
+                newSquare.bottomWall = true;
             } else {
                 newSquare.bottomWall = Math.random() < wallDensity ? false : true;
             }
             if (j == 17){
-                newSquare.rightWall = true;;
+                newSquare.rightWall = true;
             } else {
                 newSquare.rightWall = Math.random() < wallDensity ? false : true;
             }
@@ -176,7 +176,56 @@ Maze.prototype.solveMaze = function(){
     this.startSquare.wasVisited = true;
     this.iterators.push(new Iterator(this.startSquare, this));
     this.iterators[0].squaresVisited.push(this.startSquare);
+    console.log(this.solveMazeNaked());
+    console.log(this);
+    this.iterators = [];
+    for (var i = 0; i < this.squares.length; i++){
+        this.squares[i].wasVisited = false;
+    }
+    this.startSquare.wasVisited = true;
+    this.iterators.push(new Iterator(this.startSquare, this));
+    this.iterators[0].squaresVisited.push(this.startSquare);
     this.solveMazeRecursive();
+}
+
+Maze.prototype.solveMazeNaked = function(){
+    var fastestIterator = null;
+    for (var i = 0; i < this.iterators.length; i++){
+        if(this.iterators[i].currentSquare == this.endSquare){
+            if (fastestIterator == null || this.iterators[i].squaresVisited.length < fastestIterator.squaresVisited.length){
+                fastestIterator = this.iterators[i];
+            }
+        }
+    }
+    if (fastestIterator != null){
+        return fastestIterator;
+    }
+    var newIterators = [];
+    for (var i = 0; i < this.iterators.length; i++){
+        //Make new iterators when more than 1 availableMove, add them to newIterators, move them 
+        while(this.iterators[i].availableMoves.length > 1){
+            newIterators.push(new Iterator(this.iterators[i].currentSquare, this));
+            this.iterators[i].squaresVisited.forEach(function(square){
+                newIterators[newIterators.length - 1].squaresVisited.push(square);
+            })
+            newIterators[newIterators.length - 1].move(this.iterators[i].availableMoves.pop());
+            this.squares[newIterators[newIterators.length - 1].currentSquare].wasVisited = true;
+        }
+        //Move the current iterator to an available square
+        if (this.iterators[i].availableMoves.length == 0){
+            this.iterators.splice(i, 1);
+        } else {
+            this.iterators[i].move(this.iterators[i].availableMoves.pop());
+            this.squares[this.iterators[i].currentSquare].wasVisited = true;
+        }
+    }
+    //copy the newIterators into the iterators array
+    var thisMaze = this;
+    newIterators.forEach(function(newIterator){
+        thisMaze.iterators.push(newIterator);
+    })
+    //recursion:
+    return thisMaze.solveMazeNaked();
 }
 
 Maze.prototype.solveMazeRecursive = function(){
@@ -194,6 +243,7 @@ Maze.prototype.solveMazeRecursive = function(){
         fastestIterator.paintTrailFromEnd();
         $("#computerMoves").text(String(fastestIterator.squaresVisited.length - 2));
         $("#computerMoves").css("color", "rgba(0, 180, 0, 0.7)");
+        console.log(fastestIterator);
         return fastestIterator;
     }
     var newIterators = [];

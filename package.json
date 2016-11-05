@@ -1,19 +1,16 @@
 {
-  "name": "jamesriley101",
+  "name": "website",
   "version": "1.0.0",
-  "description": "Personal website",
-  "main": "app.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "author": "James Riley",
-  "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "browserify": "^13.1.0",
+    "debug": "~2.2.0",
     "ejs": "^2.5.1",
-    "express": "^4.14.0",
-    "jquery": "^3.1.0",
-    "node": "0.0.0",
-    "require": "^2.4.20"
+    "express": "~4.13.4",
+    "node": "0.0.0"
   }
 }
